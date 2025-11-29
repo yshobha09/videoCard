@@ -1,5 +1,6 @@
 body {
     background-color: rgb(114, 174, 140);
+    background-image: url("https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=1200");
 }
 
 .videoGrid {
@@ -27,4 +28,15 @@ h1 {
 
 .video-info {
     color: rgb(112, 7, 79)
+}
+.video-tile{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    
+}
+video{
+    width: 350px;
+    height: 200px;
+    border-radius: 5%;
 }

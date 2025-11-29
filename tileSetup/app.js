@@ -1,4 +1,4 @@
-const apiURL = "https://gist.githubusercontent.com/poudyalanil/ca84582cbeb4fc123a13290a586da925/raw/14a27bd0bcd0cd323b35ad79cf3b493dddf6216b/videos.json";
+const apiURL = "http://192.168.1.213:3000/videos";
 async function fetchVideoData() {
     try {
         const response = await fetch(apiURL);
@@ -18,14 +18,12 @@ function setupTile(videos) {
         const videoTile = document.createElement("div");
         videoTile.classList.add("video-tile");
 
-        const thumbnail = document.createElement("img");
-        thumbnail.classList.add("thumbnail");
-        // console.log(" here is new thumbnail === ")
-        // console.log(thumbnail)
-        // console.log(video.thumbnailUrl)
-        // console.log("end of this stuff")
-        thumbnail.src = video.thumbnailUrl;
-        thumbnail.alt = video.title;
+        
+
+        const videoEl = document.createElement("video");
+        videoEl.src = video.videoUrl;
+        videoEl.controls = true;
+        videoEl.poster = video.thumbnailUrl;
 
 
         const videoInfo = document.createElement("p");
@@ -34,7 +32,7 @@ function setupTile(videos) {
 
 
 
-        videoTile.appendChild(thumbnail);
+        videoTile.appendChild(videoEl);
         videoTile.appendChild(videoInfo);
 
         container.appendChild(videoTile);
@@ -46,3 +44,7 @@ function setupTile(videos) {
 }
 
 fetchVideoData();
+
+
+
+//"https://gist.githubusercontent.com/poudyalanil/ca84582cbeb4fc123a13290a586da925/raw/14a27bd0bcd0cd323b35ad79cf3b493dddf6216b/videos.json"
